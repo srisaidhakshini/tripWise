@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+*.log
+tripwise.db
+tripwise.db-shm
+tripwise.db-wal
+.env
