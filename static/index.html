@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b110e"><meta name="description" content="Find your next place and build a trip that feels like you.">
+  <title>TripWise — Find your somewhere</title><link rel="icon" href="/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/nearby.css"><link rel="stylesheet" href="/motion.css"><link rel="stylesheet" href="/discovery.css"><link rel="stylesheet" href="/theme.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="main-area">
+      <header class="topbar">
+        <a class="desktop-brand" href="#explore-view" aria-label="TripWise home"><img class="brand-mark" src="/mark.svg" alt=""><span>tripwise<span class="brand-period">.</span></span></a>
+        <div class="mobile-brand"><img class="brand-mark" src="/mark.svg" alt=""> tripwise<span class="brand-period">.</span></div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="primary-link active" data-view="explore">Explore</button>
+          <button class="primary-link" data-view="trip">My trip <span class="trip-count" id="trip-count">0</span></button>
+        </nav>
+        <div class="top-right"><span class="top-date" id="today-label"></span></div>
+      </header>
+      <section class="view active" id="explore-view">
+        <div class="hero"><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> THE WORLD, AT YOUR PACE</div><h1>Where to<br><em>next?</em></h1><p class="hero-lede">Find places worth a little detour, then make them part of your trip.</p><div class="search-panel"><div class="search-box"><span class="search-icon">⌕</span><input id="search-input" type="search" placeholder="Search a city or neighbourhood" autocomplete="off" aria-label="Search city for nearby places"><button class="search-submit" id="search-button" aria-label="Search">→</button></div><div class="search-hint"><span>✧</span> START WITH A PLACE</div></div></div></div>
+        <div class="section-heading"><div><div class="eyebrow small-eyebrow">A WORLD OF POSSIBILITIES</div><h2 id="results-title">A few places to begin</h2></div><div class="result-controls"><label class="filter-wrap"><span>SORT</span><select id="sort-filter" aria-label="Sort nearby places"><option value="distance">Closest first</option><option value="name">A to Z</option></select></label></div></div>
+        <div class="city-context" id="city-context" hidden><span>EXPLORING NEAR</span><select id="city-select" aria-label="Choose a nearby city result"></select><span class="context-dot">✳</span><label class="radius-select"><span>WITHIN</span><select id="radius-filter" aria-label="Set search radius"><option value="5000" selected>5 km</option><option value="15000">15 km</option><option value="30000">30 km</option></select></label></div>
+        <div class="interest-section"><span class="interest-label">EXPLORE BY INTEREST</span><div class="interest-nav" id="interest-nav" role="group" aria-label="Filter places by interest"><button class="interest-chip active" data-category="all" aria-pressed="true">All places</button><button class="interest-chip" data-category="sights" aria-pressed="false">Attractions</button><button class="interest-chip" data-category="culture" aria-pressed="false">Culture</button><button class="interest-chip" data-category="history" aria-pressed="false">History</button><button class="interest-chip" data-category="nature" aria-pressed="false">Outdoors</button><button class="interest-chip" data-category="spiritual" aria-pressed="false">Spiritual</button></div></div>
+        <div class="quick-searches" id="quick-searches"><span>IN THE MOOD FOR</span><button data-query="Kyoto">Quiet mornings</button><button data-query="Lisbon">Somewhere sunny</button><button data-query="Reykjavik">A little wild</button><button data-query="Jaipur">A different rhythm</button></div>
+        <div class="status-line" id="status-line" aria-live="polite"></div><div class="destination-grid" id="destination-grid"></div>
+        <div class="attribution">City search by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · Nearby places from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>, with <a href="https://en.wikipedia.org/" target="_blank" rel="noreferrer">Wikipedia</a> as a backup</div>
+      </section>
+      <section class="view" id="trip-view"><div class="page-intro"><div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL COLLECTION</div><h1>Your trip,<br><em>taking shape.</em></h1><p>Every place you save is a maybe, a memory, a reason to go.</p></div><div class="trip-summary" id="trip-summary"></div><div class="trip-grid" id="trip-grid"></div><div class="attribution">Your itinerary is saved to the TripWise database and stays here when you return.</div></section>
+    </main>
+    <nav class="mobile-nav" aria-label="Mobile navigation"><button class="active" data-view="explore"><span>⌕</span>Explore</button><button data-view="trip"><span>▤</span>My trip <i id="mobile-count">0</i></button></nav>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="detail-dialog" id="detail-dialog"><button class="dialog-close" id="dialog-close" aria-label="Close destination details">×</button><div id="detail-content"></div></dialog>
+  <script src="/app.js" defer></script>
+  <script src="/motion.js" defer></script>
+</body></html>

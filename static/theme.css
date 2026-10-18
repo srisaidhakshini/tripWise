@@ -1,0 +1,128 @@
+:root {
+  color-scheme: dark;
+  --paper: #0b110e;
+  --white: #151e18;
+  --ink: #edf2e8;
+  --muted: #a0aa9f;
+  --green: #8eae78;
+  --green-dark: #6f925e;
+  --line: #2b382e;
+  --lime: #c9dc92;
+  --orange: #d9906d;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--paper);
+  background-image: linear-gradient(112deg, #08110db3 0%, #09120d99 48%, #07100db3 100%), url('/images/tripwise-coast.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--ink);
+}
+
+.main-area { color: var(--ink); }
+.topbar { border-color: transparent; background: transparent; backdrop-filter: none; }
+.desktop-brand, .mobile-brand { color: var(--ink); }
+.desktop-brand .brand-mark, .mobile-brand .brand-mark { background: #739364; color: #f1f5e9; }
+.brand-period { color: #d89570; }
+.primary-link { color: #a2ada1; }
+.primary-link:hover, .primary-link.active { color: #dbe8d1; }
+.trip-count { background: #26372a; color: #c9dcb4; }
+.top-date { color: #9ba79a; }
+.avatar { background: #314738; color: #d7e8ca; }
+
+.hero { background: transparent; border-bottom: 0; }
+.hero h1, .page-intro h1, .section-heading h2, .card-title, .empty-state h3, .detail-content-body h2 { color: var(--ink); }
+.hero h1 em, .page-intro h1 em { color: #a4c18b; }
+.hero-lede, .page-intro p { color: #a6b0a4; }
+.eyebrow { color: #b6c8a9; }
+.eyebrow-line { background: #829f79; }
+.small-eyebrow { color: #9baa96; }
+.hero-index { color: #a2ad9d; }
+.hero-index span { color: #bfd59d; }
+
+.search-box { background: #17221b; border-color: #344338; box-shadow: 0 10px 32px #0005; }
+.search-box:focus-within { border-color: #91ae7c; box-shadow: 0 0 0 4px #8eae7826, 0 10px 32px #0005; }
+.search-icon { color: #a7bc9a; }
+.search-box input { appearance: none; background: transparent; border: 0; box-shadow: none; color: #f0f3ec; }
+.search-box input::placeholder { color: #8c998c; }
+.search-hint { color: #a4b09f; }
+.search-hint span { color: #b5ce91; }
+.search-submit { background: #6f925e; color: #f7f8f3; }
+.search-submit:hover { background: #83a66f; }
+
+.section-heading { border-color: var(--line); }
+.section-heading h2 { color: #ecf0e8; }
+.filter-wrap { background: #151e18; border-color: #344137; }
+.filter-wrap > span { color: #a0aa9e; }
+.filter-wrap select { color: #d6ded3; }
+.filter-wrap select option { background: #151e18; color: #e8eee5; }
+.city-context { background: #111a15ed; border-color: #3a493d; color: #aab5a8; backdrop-filter: blur(8px); }
+.city-context > select, .radius-select select { background: #1a261e; border-color: #354439; color: #e0e8dc; }
+.context-dot { color: #aec792; }
+.interest-label { color: #a3aea1; }
+.interest-chip { background: #141d17; border-color: #334036; color: #bac4b8; }
+.interest-chip:hover { border-color: #718966; background: #1a271e; }
+.interest-chip.active { background: #6f925e; border-color: #6f925e; color: #f5f7f1; }
+.quick-searches > span { color: #a2ada0; }
+.quick-searches button { background: #1a251d; color: #bcc7b8; }
+.quick-searches button:hover { background: #26372a; color: #e4eedb; }
+.status-line { color: #9eaa9e; }
+
+.destination-card, .trip-card { background: #111a15f2; border-color: #3a493d; backdrop-filter: blur(8px); }
+.destination-card:hover, .trip-card:hover { border-color: #455b48; box-shadow: 0 18px 38px #0006; }
+.card-title { color: #edf2e9; }
+.card-location { color: #a0aba0; }
+.card-footer { border-color: #2a362d; }
+.population { color: #a5b1a3; }
+.details-link { color: #b1cd92; }
+.details-link:hover { color: #d3e9ad; }
+.save-button { background: #19241d; border-color: #3a493d; color: #bfccb9; }
+.save-button:hover, .save-button.saved { background: #2a3c2d; border-color: #4c674b; color: #d7e9c1; }
+.card-kind { background: #111813e8; color: #e2eadb; }
+.empty-state { background: #111a15e8; border-color: #526450; color: #a7b1a5; backdrop-filter: blur(8px); }
+.empty-state h3 { color: #e7ede3; }
+.empty-symbol { color: #a8bf91; }
+.attribution { border-color: var(--line); color: #9da99c; }
+.attribution a, .detail-source a { color: #b1cd92; }
+.attribution a:hover, .detail-source a:hover { color: #d3e9ad; }
+
+.trip-summary { background: #1a281e; color: #c1d2b8; }
+.trip-summary b { color: #f1f4ec; }
+.trip-remove { color: #e2a28a; }
+.detail-dialog { background: #151e18; color: var(--ink); }
+.detail-dialog::backdrop { background: #030705c9; }
+.dialog-close { background: #25342a; color: #e7eee2; }
+.detail-place, .detail-description { color: #abb6a9; }
+.detail-meta { border-color: #2e3b31; }
+.meta-item span { color: #9eaa9d; }
+.meta-item b { color: #e3eae0; }
+.weather-head strong { color: #edf2e9; }
+.weather-head span, .weather-caption, .forecast-day { color: #a4afa2; }
+.forecast { border-color: #2e3b31; }
+.forecast-temp { color: #d5dfd1; }
+.detail-source { color: #9ca89b; }
+.detail-add { background: #6f925e; color: #fff; }
+.detail-add:hover { background: #83a66f; }
+.toast { background: #263c2d; color: #f4f6f1; }
+.skeleton { background: linear-gradient(100deg, #1c2820 30%, #27352a 45%, #1c2820 60%); background-size: 200% 100%; }
+.mobile-nav { background: #111914; border-color: #2b382e; }
+.mobile-nav button { color: #9da99b; }
+.mobile-nav button.active { color: #c6dda7; }
+.mobile-nav button i { background: #2b3d2e; color: #d7e8c8; }
+.toast { box-shadow: 0 7px 24px #0007; }
+
+@media (max-width: 720px) {
+  body { background-position: 58% center; }
+  .hero { background: linear-gradient(110deg, #0b1411b3 0%, #101a1680 62%, #14201840 100%); }
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #a7c58a;
+  outline-offset: 3px;
+}
+
+::selection { background: #648653; color: #fff; }
