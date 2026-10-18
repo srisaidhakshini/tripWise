@@ -1,0 +1,87 @@
+/* Depth and scroll motion for TripWise. Kept separate from the base styles. */
+.destination-card,
+.trip-card {
+  transform-style: preserve-3d;
+  transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(var(--lift, 0px));
+  transition: transform 320ms cubic-bezier(.2,.75,.25,1), box-shadow 320ms ease;
+  will-change: transform;
+}
+
+.destination-card:hover,
+.trip-card:hover {
+  --lift: -7px;
+  box-shadow: 0 19px 34px #34442e18;
+}
+
+.card-art {
+  transform-style: preserve-3d;
+}
+
+.card-art:before {
+  transform: translateZ(30px);
+}
+
+.card-art:after {
+  transform: translateZ(16px) rotate(-8deg);
+}
+
+.card-art-mark {
+  transform: translateZ(42px);
+  text-shadow: 0 5px 14px #38463240;
+}
+
+.card-kind {
+  transform: translateZ(30px);
+}
+
+.card-body {
+  transform: translateZ(12px);
+}
+
+.save-button,
+.details-link {
+  transition: transform 200ms ease, color 200ms ease, background-color 200ms ease;
+}
+
+.save-button:hover,
+.details-link:hover {
+  transform: translateY(-2px) translateZ(18px);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  translate: 0 26px;
+  transition: opacity 650ms ease var(--reveal-delay, 0ms), translate 650ms cubic-bezier(.2,.7,.25,1) var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .destination-card:hover,
+  .trip-card:hover {
+    --lift: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    translate: none;
+  }
+
+  .destination-card,
+  .trip-card {
+    transform: none !important;
+    will-change: auto;
+  }
+}
