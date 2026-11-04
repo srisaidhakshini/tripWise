@@ -4,5 +4,4 @@ __pycache__/
 tripwise.db
 tripwise.db-shm
 tripwise.db-wal
-config.bat
 node_modules
